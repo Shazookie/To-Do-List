@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do List</title>
+</head>
+
+<body>
+
+<div class = "nav">
+
+    <h1>To-Do List</h1>
+    <hr>
+
+    <form action="/action_page.php">
+        <lable for="fname">Task name:</lable>
+        <br>
+        <input type="text" id="taskName" name="taskName" value="Example task">
+        <input id="Submit" type="submit" value="Create"><br>
+    </form>
+
+    <div id="taskDiv">
+        <form action="/action_page.php">
+            <input type="checkbox" id="task1" name="task1" value="task1">
+            <label for="task1"> Example task</label> 
+            <input id ="Remove" type="submit" value="Remove task"><br>
+    </div>
+
+
+</div>
+
+<script>src="script.js"</script>
+</body>
+</html>
+
+
