@@ -29,6 +29,38 @@ function addTask(event){
     if (newText === "")return;
 
 
+    //These are the elements each item will have
+
+            //COntainer for the items 
+        const EachTask = document.createElement('div'); 
+
+            //checkbox
+        const CheckBox = document.createElement('input');
+        CheckBox.type = "checkbox"; // sets as checkbox
+            //task name
+        const TaskName = document.createElement('span'); // tracks the 'string'
+        TaskName.innerText = newText; //links to our thing grabbing text earlier line 26
+            //Delete button
+        const DeleteBtn = document.createElement('input');
+        DeleteBtn.type = "button"; // sets as button
+        DeleteBtn.value = "Delete"; // displays this text on the button
+
+            //link those elements into the container, the div thing
+            EachTask.appendChild(CheckBox);
+            EachTask.appendChild(TaskName);
+            EachTask.appendChild(DeleteBtn);
+
+    
+taskList.appendChild(EachTask); //links these to the actual page element 
+taskText.value = ""; //Next text element then defaults to being blank
+    
+
+
+
+
+
+
+
         // shows us the text popping up in console
         //console.log(newText);
         
@@ -40,5 +72,7 @@ taskMake.addEventListener('click', addTask);
 
 
 //making the blue print for elements of the to do list 
+
+
 
 
