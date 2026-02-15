@@ -45,7 +45,7 @@ function addTask(event){
         DeleteBtn.type = "button"; // sets as button
         DeleteBtn.value = "Delete"; // displays this text on the button
 
-            //link those elements into the container, the div thing
+                //link those elements into the container, the div thing
             EachTask.appendChild(CheckBox);
             EachTask.appendChild(TaskName);
             EachTask.appendChild(DeleteBtn);
@@ -54,10 +54,17 @@ function addTask(event){
 taskList.appendChild(EachTask); //links these to the actual page element 
 taskText.value = ""; //Next text element then defaults to being blank
     
+            //delte functionality, calls for a listener makes a function for it to just remove the task it is connected to 
+        DeleteBtn.addEventListener('click', function(){
+            EachTask.remove();
+        });
 
+            //Marks completed items with a slash 
+        CheckBox.addEventListener('change', function(){
+            EachTask.classList.toggle("completed"); // flip flops whther clicked once or twice so just takes on or off, add to the specific text of the task its connected wiht  
+        });
 
-
-
+    
 
 
 

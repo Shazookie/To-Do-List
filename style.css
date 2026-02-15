@@ -9,6 +9,11 @@
     font-size: 20px;
 }
 
+.completed { /*for the completed items to be crossed off*/
+    text-decoration: line-through;
+    color: gray;
+}
+
 #TaskDiv {
     background-color: rgb(240, 243, 231);
     border: 1px solid #2c2d2d;
@@ -22,4 +27,5 @@
     margin-top: 3px;
 
 }
+
 
