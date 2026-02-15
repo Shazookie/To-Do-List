@@ -1,7 +1,7 @@
 //test to see if linked with html file. it is
 console.log("H3110 W0r1d")
 
-//lets link our elements we will want to code
+// links to the elements in html that we will want to code with
 
 const taskText = document.getElementById('WriteTask');
 
@@ -9,9 +9,17 @@ const taskMake = document.getElementById('CreateTask');
 
 const taskList = document.getElementById('TaskDiv');
 
+const empty = document.getElementById('NoTasks');// for the display mesaage when all tasks are removed
+
+let taskCount = 0; //tracker for if emplty. let not const cuz it changes
+
+/* for testing the links worked
 console.log(taskText);
 console.log(taskMake);
 console.log(taskList);
+*/
+
+
 
 //now for event listeners
 
@@ -28,11 +36,17 @@ function addTask(event){
     // doesnt allow empty strings
     if (newText === "")return;
 
+    taskCount++; //incriments when made
+    if (taskCount > 0){
+        empty.style.display = "none"; // removes text saying all tasks are done
+    }
+
 
     //These are the elements each item will have
 
             //COntainer for the items 
         const EachTask = document.createElement('div'); 
+
 
             //checkbox
         const CheckBox = document.createElement('input');
@@ -57,6 +71,11 @@ taskText.value = ""; //Next text element then defaults to being blank
             //delte functionality, calls for a listener makes a function for it to just remove the task it is connected to 
         DeleteBtn.addEventListener('click', function(){
             EachTask.remove();
+            taskCount--;
+
+                if (taskCount <= 0){
+                    empty.style.display = "block"; //displays the text saying tasks are all done
+                }
         });
 
             //Marks completed items with a slash 
